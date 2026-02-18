@@ -34,7 +34,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <Link href="#" className="flex items-center gap-2 group">
           <Image
-            src="/logo.png"
+            src="/images/logo.jpg"
             alt="Vaibhav Selkar"
             width={40}
             height={40}
