@@ -20,8 +20,9 @@ export default function Header() {
 
   const navItems = [
     { label: 'About', href: '#about' },
-    { label: 'Work', href: '#work' },
-    { label: 'Projects', href: '#projects' },
+    { label: 'Products', href: '#products' },
+    { label: 'Skills', href: '#skills' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Contact', href: '#contact' },
   ]
 
@@ -32,15 +33,18 @@ export default function Header() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link href="#" className="flex items-center gap-2 group">
+        <Link href="#" className="flex items-center gap-3 group">
           <Image
             src="/images/logo.jpg"
             alt="Vaibhav Selkar"
-            width={40}
-            height={40}
-            className="rounded-lg hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+            width={48}
+            height={48}
+            className="rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all"
           />
-          <span className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">Vaibhav</span>
+          <div>
+            <div className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">Vaibhav Selkar</div>
+            <div className="text-xs text-gray-400">Product Engineer & Co-Founder</div>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
@@ -54,14 +58,24 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <a
-            href="https://github.com/vaibhavselkar"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all"
-          >
-            GitHub
-          </a>
+          <div className="flex gap-3">
+            <a
+              href="https://linkedin.com/in/vaibhav-selkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/vaibhavselkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -91,14 +105,24 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href="https://github.com/vaibhavselkar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-purple-500/50 transition-all"
-              >
-                GitHub
-              </a>
+              <div className="flex flex-col gap-2 pt-2 border-t border-purple-500/20">
+                <a
+                  href="https://linkedin.com/in/vaibhav-selkar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/vaibhavselkar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

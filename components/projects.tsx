@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Users, Zap, Database } from 'lucide-react'
+import { ExternalLink, Users, Rocket, Brain, Database, Code, Smartphone, Zap } from 'lucide-react'
 
 interface Project {
   title: string
@@ -9,55 +9,114 @@ interface Project {
   highlights: string[]
   icon: React.ReactNode
   tags: string[]
+  status: 'Live' | 'In Development' | 'Built'
+  link?: string
   delay: number
 }
 
 const projects: Project[] = [
   {
-    title: 'Ed-Tech Platform',
-    description: 'Multi-tenant learning system serving teachers and students with real-time analytics and insights.',
+    title: 'Sanghamitra EdTech Platform',
+    description: 'AI-driven EdTech platform serving real classrooms across India. Built as co-founder and founding engineer from day zero.',
     highlights: [
+      '66% API latency reduction (420ms → 140ms)',
+      '28% increase in new-user signups',
+      '99.9% uptime with autoscaling infrastructure',
+      '85% test coverage, 60% fewer production defects',
+      '45% faster release cycles with CI/CD automation',
       '70% feature adoption increase',
-      '10+ classrooms supported',
-      '99.9% uptime maintained',
-      'Admin dashboards with KPIs',
+      '10+ classrooms, 20+ students per session',
+      '10+ hours/week teacher workflow efficiency'
     ],
     icon: <Users className="w-6 h-6" />,
-    tags: ['Node.js', 'React', 'MongoDB', 'JWT Auth'],
+    tags: ['React', 'Node.js', 'Python', 'Flask', 'MongoDB', 'PostgreSQL', 'AWS EC2', 'AI/LLM'],
+    status: 'Live',
+    link: 'https://sanghamitra.com',
     delay: 0,
   },
   {
-    title: 'Billing Application',
-    description: 'Retail billing system with printer integration and intelligent inventory management for multi-tenant operations.',
+    title: 'EduRAG - AI Exam Paper Generator',
+    description: 'RAG-powered exam paper generation platform for Indian school boards (CBSE, ICSE, Maharashtra State Board).',
     highlights: [
-      '35% checkout time reduction',
-      '40% fewer billing errors',
-      '500+ invoices/day',
-      'Real-time inventory sync',
+      'Retrieval-Augmented Generation pipeline',
+      'Curriculum document processing and vector embeddings',
+      'Customizable exam papers with answer keys',
+      'Salt-based medicine substitute search',
+      'Multi-role dashboard system'
     ],
-    icon: <Database className="w-6 h-6" />,
-    tags: ['Express', 'PostgreSQL', 'Redis Cache', 'Printer API'],
+    icon: <Brain className="w-6 h-6" />,
+    tags: ['Python', 'FastAPI', 'React', 'Vite', 'ChromaDB', 'MongoDB', 'JWT', 'Tailwind CSS'],
+    status: 'In Development',
     delay: 0.1,
   },
   {
-    title: 'Expense Tracking App',
-    description: 'Internal finance system for budget compliance, category-wise reporting, and audit trails.',
+    title: 'PharmaFlow',
+    description: 'Pharmaceutical supply chain management platform connecting pharmacies, distributors, delivery agents, and administrators.',
     highlights: [
-      '30% faster audits',
-      '20% overspending reduction',
-      'Budget compliance tracking',
-      'Multi-department support',
+      'Multi-stakeholder dashboard system',
+      'Real-time order tracking and fulfillment',
+      'Salt-based medicine substitute search',
+      'Inventory management for distributors',
+      'Revenue and analytics monitoring'
+    ],
+    icon: <Database className="w-6 h-6" />,
+    tags: ['Next.js', 'TypeScript', 'React', 'Supabase', 'ShadCN UI', 'Tailwind CSS'],
+    status: 'In Development',
+    delay: 0.2,
+  },
+  {
+    title: 'DeskExam',
+    description: 'Academic document platform for students, researchers, and teachers. Smart PDF processing and LaTeX studio.',
+    highlights: [
+      'PDF to presentation conversion',
+      'LaTeX equation editor with real-time preview',
+      'Academic document transformation',
+      'Content organizer for research materials',
+      'Free and premium feature tiers'
+    ],
+    icon: <Code className="w-6 h-6" />,
+    tags: ['Next.js', 'React', 'TypeScript'],
+    status: 'Live',
+    link: 'https://deskexam.com',
+    delay: 0.3,
+  },
+  {
+    title: 'CaterConnect India',
+    description: 'Catering marketplace for Wardha, Maharashtra - digital platform for event catering services.',
+    highlights: [
+      'Custom menu building with real-time pricing',
+      'Multi-caterer quote comparison',
+      'Digital enquiry system for caterers',
+      'Professional online presence for local businesses',
+      'Scalable architecture for other cities'
+    ],
+    icon: <Smartphone className="w-6 h-6" />,
+    tags: ['React', 'Node.js', 'MongoDB'],
+    status: 'Built',
+    delay: 0.4,
+  },
+  {
+    title: 'Kapil Electricals Website',
+    description: 'Professional electrical contracting and solar solutions company website with lead generation and client management.',
+    highlights: [
+      'Auto-rotating hero with crossfade transitions',
+      'Interactive project gallery with categories',
+      'Customer review system for solar solutions',
+      'Multi-channel contact system',
+      'Certifications and compliance display',
+      'SEO optimized with semantic HTML'
     ],
     icon: <Zap className="w-6 h-6" />,
-    tags: ['Node.js', 'React', 'Analytics', 'Reports'],
-    delay: 0.2,
+    tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Radix UI', 'React Hook Form', 'Zod'],
+    status: 'Live',
+    delay: 0.5,
   },
 ]
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="products" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,8 +124,9 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Products Built</h2>
+          <p className="text-xl text-gray-300 mb-4">6 products across 6 different industries - from solo projects to co-founding ventures</p>
+          <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -79,19 +139,43 @@ export default function Projects() {
               viewport={{ once: true }}
               className="group glass p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 flex flex-col h-full"
             >
-              {/* Icon */}
-              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center mb-6 text-purple-300 group-hover:text-pink-300 transition-colors">
-                {project.icon}
+              {/* Header */}
+              <div className="flex items-start justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center text-purple-300 group-hover:text-pink-300 transition-colors">
+                    {project.icon}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
+                      {project.title}
+                    </h3>
+                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                      project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                      project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                      'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                    }`}>
+                      {project.status}
+                    </span>
+                  </div>
+                </div>
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-400 hover:text-pink-400 transition-colors"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                  </a>
+                )}
               </div>
 
-              {/* Title & Description */}
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
-                {project.title}
-              </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed flex-grow">{project.description}</p>
+              {/* Description */}
+              <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
 
               {/* Highlights */}
               <div className="mb-6">
+                <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Achievements</h4>
                 <ul className="space-y-2">
                   {project.highlights.map((highlight, i) => (
                     <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
@@ -114,14 +198,42 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* CTA */}
-              <div className="flex items-center text-purple-400 group-hover:text-pink-400 transition-colors font-medium text-sm">
-                Learn more
-                <ExternalLink className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+              {/* Footer */}
+              <div className="mt-auto flex items-center justify-between">
+                <div className="flex items-center text-purple-400 group-hover:text-pink-400 transition-colors font-medium text-sm">
+                  <Rocket className="w-4 h-4 mr-2" />
+                  <span>Solo Builder</span>
+                </div>
+                <div className="text-xs text-gray-500">Built from scratch</div>
               </div>
             </motion.div>
           ))}
         </div>
+
+        {/* Industries Served */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <h3 className="text-xl text-gray-300 mb-8">Industries Served</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            {['EdTech', 'Pharmaceutical', 'Academic', 'Catering', 'Electrical Contracting', 'AI/ML'].map((industry, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                viewport={{ once: true }}
+                className="px-4 py-2 bg-slate-800/50 rounded-full text-gray-300 text-sm border border-purple-500/20"
+              >
+                {industry}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )

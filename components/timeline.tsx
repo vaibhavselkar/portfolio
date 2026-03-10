@@ -1,84 +1,111 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap } from 'lucide-react'
+import { Briefcase, GraduationCap, Rocket, Brain, Code, Users } from 'lucide-react'
 
 interface TimelineEvent {
-  type: 'work' | 'education'
+  type: 'work' | 'education' | 'achievement'
   title: string
   organization: string
   date: string
   description: string
   highlights?: string[]
   delay: number
+  icon?: React.ReactNode
 }
 
 const timelineEvents: TimelineEvent[] = [
   {
     type: 'work',
-    title: 'Software Engineer / Product Manager',
-    organization: 'Sanghamitra Business Incubator',
+    title: 'Co-Founder & AI Product Engineer',
+    organization: 'Sanghamitra EdTech',
     date: 'Apr 2024 – Present',
-    description: 'Leading full delivery of SaaS platforms with focus on architecture and product-market fit.',
+    description: 'Built India\'s AI-driven EdTech platform from day zero. Designed workflows, made product and engineering decisions simultaneously, and integrated AI at every layer.',
     highlights: [
-      'Architected multi-tenant backend systems with Node.js + Express',
-      'Implemented JWT authentication and security protocols',
-      'Integrated Python-based AI modules using Flask servers',
-      'Engineered automated testing framework (40% UX improvement)',
-      'Optimized API logic reducing latency by 66% (420ms → 140ms)',
-      'Launched onboarding flow increasing signups by 28%',
-      'Maintained 99.9% uptime through autoscaling and load balancing',
-      'Expanded test coverage to 85%, reducing production defects by 60%',
-      'Automated CI/CD with GitHub Actions, reducing release time by 45%',
+      'Co-founded with 3 founding members - designed entire workflow and infrastructure',
+      '66% API latency reduction (420ms → 140ms) through optimization',
+      '28% increase in new-user signups via improved onboarding flow',
+      '99.9% uptime with stateless autoscaling and load-balanced deployments',
+      '85% test coverage, 60% reduction in production defects',
+      '45% faster release cycles through CI/CD automation',
+      '70% feature adoption increase, 10+ hours/week teacher efficiency gain',
+      'Multi-tenant SaaS architecture serving 10+ classrooms, 20+ students per session',
+      'AI integration across writing feedback, quiz generation, and assessment framework'
     ],
     delay: 0,
+    icon: <Brain className="w-6 h-6" />
   },
   {
     type: 'work',
-    title: 'Product Development Associate / Manager',
+    title: 'Product Development Manager',
     organization: 'Sanghamitra Business Incubator',
     date: 'Mar 2021 – Mar 2024',
-    description: 'End-to-end product development from concept to market release, covering hardware and software.',
+    description: 'Managed full product lifecycle for physical consumer products - water filters, air coolers. Transitioned from hardware to software product development.',
     highlights: [
-      'Coordinated full product lifecycle for consumer products',
-      'Analyzed product performance and customer feedback',
-      'Collaborated with engineering teams on efficiency optimization',
-      'Conducted regional market research and sales analysis',
-      'Strengthened product-market fit through customer insights',
+      'Led product development from concept through prototyping, testing, manufacturing, and market launch',
+      'Analyzed product performance, testing results, and customer feedback for design improvements',
+      'Conducted regional sales research across Wardha and Hyderabad for market insights',
+      'Established Sanghamitra\'s Hyderabad presence from scratch - location, office, marketing materials',
+      'Designed and executed Water Quality Awareness Program at Primary Health Care Centre',
+      'Organized week-long summer school covering math, English, robotics, and computer knowledge',
+      'Built foundation for transitioning into software product development'
     ],
     delay: 0.2,
+    icon: <Rocket className="w-6 h-6" />
   },
   {
     type: 'education',
     title: 'Diploma in Data Science and Programming',
     organization: 'Indian Institute of Technology, Madras',
     date: 'Sep 2024 – Present',
-    description: 'Advanced studies in data science, algorithms, and programming fundamentals.',
-    highlights: ['GPA: 8.75', 'Focus on ML and data analysis'],
+    description: 'Advanced studies in data science, machine learning, statistical analysis, and programming.',
+    highlights: ['GPA: 8.75', 'Building formal foundations on practical experience'],
     delay: 0.4,
+    icon: <GraduationCap className="w-6 h-6" />
   },
   {
     type: 'education',
     title: 'Applied Data Science Lab',
     organization: 'WorldQuant University',
     date: 'Feb 2023 – Aug 2023',
-    description: 'Intensive program in applied data science and statistical analysis.',
+    description: 'Rigorous applied data science program focused on real-world projects and machine learning workflows.',
+    highlights: ['Built and deployed ML models', 'Worked with large datasets', 'Full data science workflow'],
     delay: 0.6,
+    icon: <Brain className="w-6 h-6" />
+  },
+  {
+    type: 'achievement',
+    title: '6 Products Built Across 6 Industries',
+    organization: 'Solo Projects & Co-Founding',
+    date: '2021 – Present',
+    description: 'Built diverse products solving real problems across multiple industries.',
+    highlights: [
+      'Sanghamitra EdTech Platform - AI-driven learning system',
+      'EduRAG - AI exam paper generator with RAG pipeline',
+      'PharmaFlow - Pharmaceutical supply chain management',
+      'DeskExam - Academic document platform',
+      'CaterConnect India - Catering marketplace',
+      'Kapil Electricals - Professional business website'
+    ],
+    delay: 0.8,
+    icon: <Code className="w-6 h-6" />
   },
   {
     type: 'education',
     title: 'Bachelor of Science',
     organization: 'Bajaj College of Science, Wardha',
     date: 'Jul 2017 – Dec 2020',
-    description: 'Foundation in science and analytical thinking.',
-    delay: 0.8,
+    description: 'Foundation in science, analytical thinking, research methodology, and data analysis.',
+    highlights: ['Microbiology, Botany, Chemistry', 'Developed analytical and research skills'],
+    delay: 1.0,
+    icon: <GraduationCap className="w-6 h-6" />
   },
 ]
 
 export default function Timeline() {
   return (
-    <section id="work" className="py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <section id="experience" className="py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -86,8 +113,9 @@ export default function Timeline() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Experience & Education</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Professional Journey</h2>
+          <p className="text-xl text-gray-300 mb-4">From hardware product development to AI-driven software platforms</p>
+          <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 
         {/* Timeline */}
@@ -104,12 +132,14 @@ export default function Timeline() {
               {/* Dot */}
               <div className="absolute left-0 top-6 w-16 h-16 md:static md:flex md:justify-center">
                 <div className="flex items-center justify-center w-16 h-16">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white relative z-10">
-                    {event.type === 'work' ? (
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white relative z-10 ${
+                    event.type === 'achievement' ? 'ring-4 ring-purple-300/30' : ''
+                  }`}>
+                    {event.icon || (event.type === 'work' ? (
                       <Briefcase size={20} />
                     ) : (
                       <GraduationCap size={20} />
-                    )}
+                    ))}
                   </div>
                 </div>
               </div>
@@ -130,7 +160,11 @@ export default function Timeline() {
                   <ul className="space-y-2">
                     {event.highlights.map((highlight, i) => (
                       <li key={i} className="flex items-start gap-2 text-gray-400 text-sm">
-                        <span className="text-purple-400 font-bold mt-0.5 flex-shrink-0">•</span>
+                        <span className={`font-bold mt-0.5 flex-shrink-0 ${
+                          event.type === 'work' ? 'text-purple-400' :
+                          event.type === 'education' ? 'text-blue-400' :
+                          'text-green-400'
+                        }`}>•</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -140,6 +174,32 @@ export default function Timeline() {
             </motion.div>
           ))}
         </div>
+
+        {/* Key Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          viewport={{ once: true }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
+        >
+          <div className="glass p-6 rounded-xl border border-purple-500/20">
+            <div className="text-3xl font-bold text-purple-400 mb-2">6</div>
+            <div className="text-sm text-gray-400">Products Built</div>
+          </div>
+          <div className="glass p-6 rounded-xl border border-purple-500/20">
+            <div className="text-3xl font-bold text-blue-400 mb-2">6</div>
+            <div className="text-sm text-gray-400">Industries Served</div>
+          </div>
+          <div className="glass p-6 rounded-xl border border-purple-500/20">
+            <div className="text-3xl font-bold text-green-400 mb-2">3+</div>
+            <div className="text-sm text-gray-400">Years Experience</div>
+          </div>
+          <div className="glass p-6 rounded-xl border border-purple-500/20">
+            <div className="text-3xl font-bold text-pink-400 mb-2">1000+</div>
+            <div className="text-sm text-gray-400">Users Served</div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

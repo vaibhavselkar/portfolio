@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ArrowRight, Download } from 'lucide-react'
+import { ArrowRight, Download, Code, Rocket, Brain } from 'lucide-react'
 import Link from 'next/link'
 
 export default function Hero() {
@@ -31,27 +31,25 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-4xl mx-auto text-center"
+        className="max-w-5xl mx-auto text-center"
       >
         {/* Animated Name */}
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-            <span className="text-white">Building Scalable</span>
+            <span className="text-white">Vaibhav</span>
             <br />
-            <span className="gradient-text">Systems.</span>
-            <br />
-            <span className="text-white">Shipping Impactful</span>
-            <br />
-            <span className="gradient-text">Products.</span>
+            <span className="gradient-text">Selkar</span>
           </h1>
+          <p className="text-xl sm:text-2xl text-gray-300 mb-4">Product Engineer & Co-Founder</p>
+          <p className="text-sm text-gray-400 mb-8">Building systems that run businesses | AI Integration Expert | Full-Stack Developer</p>
         </motion.div>
 
         {/* Subheading */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
-          Product-focused software engineer blending backend architecture, AI integration, and data-driven product strategy. Currently shipping SaaS platforms at Sanghamitra.
+          I build products that solve real problems. From EdTech platforms serving classrooms across India to AI-powered exam generators and supply chain solutions, I've built 6 products across 6 different industries. My approach: identify the problem, design the solution, and ship it fast.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -60,45 +58,66 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
           <Link
-            href="#projects"
+            href="#about"
             className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center gap-2 group"
           >
-            View My Work
+            View My Story
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
-            href="https://blobs.vusercontent.net/blob/Resume-RahATy4XEsieTN6vDWFflE5NJ0e9Ff.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:vaibhavselkar.tech@gmail.com"
             className="px-8 py-3 border border-purple-400 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all flex items-center gap-2"
           >
             <Download size={20} />
-            Download Resume
+            Contact Me
           </a>
           <Link
-            href="#contact"
+            href="#products"
             className="px-8 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg font-semibold hover:bg-slate-800 transition-all"
           >
-            Get in Touch
+            See Products
           </Link>
         </motion.div>
 
         {/* Quick Stats */}
         <motion.div
           variants={itemVariants}
-          className="grid grid-cols-3 gap-4 sm:gap-6 max-w-xl mx-auto mt-16"
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-2xl mx-auto mt-16"
         >
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold gradient-text">66%</div>
+            <div className="text-2xl sm:text-3xl font-bold gradient-text">6</div>
+            <p className="text-xs sm:text-sm text-gray-400 mt-2">Products Built</p>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl sm:text-3xl font-bold gradient-text">66%</div>
             <p className="text-xs sm:text-sm text-gray-400 mt-2">API Latency ↓</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold gradient-text">28%</div>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">User Adoption ↑</p>
+            <div className="text-2xl sm:text-3xl font-bold gradient-text">28%</div>
+            <p className="text-xs sm:text-sm text-gray-400 mt-2">Signups ↑</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl sm:text-4xl font-bold gradient-text">99.9%</div>
+            <div className="text-2xl sm:text-3xl font-bold gradient-text">99.9%</div>
             <p className="text-xs sm:text-sm text-gray-400 mt-2">Uptime</p>
+          </div>
+        </motion.div>
+
+        {/* Tech Icons */}
+        <motion.div
+          variants={itemVariants}
+          className="flex justify-center gap-8 mt-12 text-gray-400"
+        >
+          <div className="flex items-center gap-2">
+            <Code size={20} />
+            <span className="text-sm">React/Node.js</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Brain size={20} />
+            <span className="text-sm">AI/ML</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Rocket size={20} />
+            <span className="text-sm">Product</span>
           </div>
         </motion.div>
       </motion.div>
