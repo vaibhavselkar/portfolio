@@ -141,7 +141,7 @@ export default function About() {
               </p>
               
               <p className="text-gray-300 leading-relaxed mb-4">
-                I joined Sanghamitra as one of three founding members at day zero. There was no codebase, no process, no team structure, and no blueprint. I designed the workflow, made product and engineering decisions simultaneously, integrated AI at every layer of the product, and shipped a working platform that serves real classrooms in India.
+                I joined Sanghamitra Tech as one of three founding members at day zero. There was no codebase, no process, no team structure, and no blueprint. I designed the workflow, made product and engineering decisions simultaneously, integrated AI at every layer of the product, and shipped a working platform that serves real classrooms in India.
               </p>
 
               <p className="text-gray-300 leading-relaxed">
@@ -209,11 +209,11 @@ export default function About() {
         >
           <h3 className="text-2xl font-bold text-white mb-8">Products Built</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: 'Sanghamitra EdTech', status: 'Live', role: 'Co-Founder & Founding Engineer', tech: 'React, Node.js, Python, AI' },
+              {[
+              { name: 'Sanghamitra EdTech', status: 'Live', role: 'AI Product Engineer (Team Product)', tech: 'React, Node.js, Python, AI/LLM' },
               { name: 'EduRAG', status: 'In Development', role: 'Solo Builder', tech: 'Python, FastAPI, React, RAG' },
               { name: 'PharmaFlow', status: 'In Development', role: 'Solo Builder', tech: 'Next.js, TypeScript, Supabase' },
-              { name: 'DeskExam', status: 'Live', role: 'Solo Builder', tech: 'Next.js, React, TypeScript' },
+              { name: 'DeskExam', status: 'Live', role: 'Solo Builder', tech: 'Next.js, React, TypeScript, Google API' },
               { name: 'CaterConnect India', status: 'Built', role: 'Solo Builder', tech: 'React, Node.js, MongoDB' },
               { name: 'Kapil Electricals', status: 'Live', role: 'Client Project', tech: 'Next.js 16, React 19, TypeScript' },
             ].map((product, index) => (

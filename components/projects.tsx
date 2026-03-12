@@ -17,7 +17,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: 'Sanghamitra EdTech Platform',
-    description: 'AI-driven EdTech platform serving real classrooms across India. Built as co-founder and founding engineer from day zero.',
+    description: 'AI-driven EdTech platform serving real classrooms across India. Team product where I serve as AI Product Engineer.',
     highlights: [
       '66% API latency reduction (420ms → 140ms)',
       '28% increase in new-user signups',
@@ -66,16 +66,17 @@ const projects: Project[] = [
   },
   {
     title: 'DeskExam',
-    description: 'Academic document platform for students, researchers, and teachers. Smart PDF processing and LaTeX studio.',
+    description: 'Academic document platform for students, researchers, and teachers. Uses Google API to read and verify documents, providing the best version download by analyzing problem statements beforehand.',
     highlights: [
-      'PDF to presentation conversion',
+      'Google API integration for document reading and verification',
+      'Smart PDF processing with version optimization',
       'LaTeX equation editor with real-time preview',
       'Academic document transformation',
       'Content organizer for research materials',
       'Free and premium feature tiers'
     ],
     icon: <Code className="w-6 h-6" />,
-    tags: ['Next.js', 'React', 'TypeScript'],
+    tags: ['Next.js', 'React', 'TypeScript', 'Google API'],
     status: 'Live',
     link: 'https://deskexam.com',
     delay: 0.3,
