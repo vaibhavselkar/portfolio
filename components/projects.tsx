@@ -155,23 +155,28 @@ export default function Projects() {
                       {project.title}
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                        project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                        project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                        'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                      }`}>
-                        {project.status}
-                      </span>
-                      {project.link && (
+                      {project.link ? (
                         <a
                           href={project.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1 px-3 py-1 rounded-full bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 hover:text-white border border-purple-500/30 hover:border-purple-400 transition-all duration-200 text-xs font-medium"
+                          className={`flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full cursor-pointer hover:opacity-80 transition-opacity ${
+                            project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                            project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                            'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                          }`}
                         >
+                          {project.status}
                           <ExternalLink className="w-3 h-3" />
-                          Visit
                         </a>
+                      ) : (
+                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                          project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                          project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                          'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                        }`}>
+                          {project.status}
+                        </span>
                       )}
                     </div>
                   </div>
