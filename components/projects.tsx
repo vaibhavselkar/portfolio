@@ -51,17 +51,17 @@ const projects: Project[] = [
   },
   {
     title: 'DeskExam',
-    description: 'Academic document platform for students, researchers, and teachers. Uses Google API to read and verify documents, providing the best version download by analyzing problem statements beforehand.',
+    description: 'AI-powered academic platform combining document processing, a LaTeX editor with live preview, and a RAG-based exam generation system for structured content creation and evaluation workflows.',
     highlights: [
-      'Google API integration for document reading and verification',
-      'Smart PDF processing with version optimization',
+      'RAG pipeline for intelligent exam paper generation',
+      'Vector search with ChromaDB over academic documents',
+      'LLM-driven feedback and content generation (Gemini API)',
       'LaTeX equation editor with real-time preview',
-      'Academic document transformation',
-      'Content organizer for research materials',
-      'Free and premium feature tiers'
+      'Intelligent document handling and transformation',
+      'End-to-end academic workflow from upload to evaluation'
     ],
     icon: <Code className="w-6 h-6" />,
-    tags: ['Next.js', 'React', 'TypeScript', 'Google API'],
+    tags: ['Node.js', 'React', 'TypeScript', 'Python', 'FastAPI', 'ChromaDB', 'Gemini API'],
     status: 'Live',
     link: 'https://deskexam.com',
     delay: 0.3,
@@ -190,7 +190,19 @@ export default function Projects() {
                   <Rocket className="w-4 h-4 mr-2" />
                   <span>Solo Builder</span>
                 </div>
-                <div className="text-xs text-gray-500">Built from scratch</div>
+                {project.link ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 hover:text-white border border-purple-500/30 hover:border-purple-400 transition-all duration-200 text-xs font-medium"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    Visit Site
+                  </a>
+                ) : (
+                  <div className="text-xs text-gray-500">Built from scratch</div>
+                )}
               </div>
             </motion.div>
           ))}
