@@ -75,13 +75,12 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     type: 'achievement',
-    title: '6 Products Built Across 6 Industries',
+    title: '5 Products Built Across 5 Industries',
     organization: 'Solo Projects & Co-Founding',
     date: '2021 – Present',
     description: 'Built diverse products solving real problems across multiple industries.',
     highlights: [
       'Sanghamitra EdTech Platform - AI-driven learning system',
-      'EduRAG - AI exam paper generator with RAG pipeline',
       'PharmaFlow - Pharmaceutical supply chain management',
       'DeskExam - Academic document platform',
       'CaterConnect India - Catering marketplace',

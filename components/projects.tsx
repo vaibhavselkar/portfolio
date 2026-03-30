@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Users, Rocket, Brain, Database, Code, Smartphone, Zap } from 'lucide-react'
+import { ExternalLink, Users, Rocket, Database, Code, Smartphone, Zap } from 'lucide-react'
 
 interface Project {
   title: string
@@ -33,21 +33,6 @@ const projects: Project[] = [
     status: 'Live',
     link: 'https://sanghamitra.com',
     delay: 0,
-  },
-  {
-    title: 'EduRAG - AI Exam Paper Generator',
-    description: 'RAG-powered exam paper generation platform for Indian school boards (CBSE, ICSE, Maharashtra State Board).',
-    highlights: [
-      'Retrieval-Augmented Generation pipeline',
-      'Curriculum document processing and vector embeddings',
-      'Customizable exam papers with answer keys',
-      'Salt-based medicine substitute search',
-      'Multi-role dashboard system'
-    ],
-    icon: <Brain className="w-6 h-6" />,
-    tags: ['Python', 'FastAPI', 'React', 'Vite', 'ChromaDB', 'MongoDB', 'JWT', 'Tailwind CSS'],
-    status: 'In Development',
-    delay: 0.1,
   },
   {
     title: 'PharmaFlow',
@@ -126,7 +111,7 @@ export default function Projects() {
           className="mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Products Built</h2>
-          <p className="text-xl text-gray-300 mb-4">6 products across 6 different industries - from solo projects to co-founding ventures</p>
+          <p className="text-xl text-gray-300 mb-4">5 products across 5 different industries - from solo projects to co-founding ventures</p>
           <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 

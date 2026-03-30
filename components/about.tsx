@@ -211,7 +211,6 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
               { name: 'Sanghamitra EdTech', status: 'Live', role: 'AI Product Engineer (Team Product)', tech: 'React, Node.js, Python, AI/LLM' },
-              { name: 'EduRAG', status: 'In Development', role: 'Solo Builder', tech: 'Python, FastAPI, React, RAG' },
               { name: 'PharmaFlow', status: 'In Development', role: 'Solo Builder', tech: 'Next.js, TypeScript, Supabase' },
               { name: 'DeskExam', status: 'Live', role: 'Solo Builder', tech: 'Next.js, React, TypeScript, Google API' },
               { name: 'CaterConnect India', status: 'Built', role: 'Solo Builder', tech: 'React, Node.js, MongoDB' },
