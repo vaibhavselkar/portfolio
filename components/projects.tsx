@@ -135,25 +135,28 @@ export default function Projects() {
                     <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
                       {project.title}
                     </h3>
-                    <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                      project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                      project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                      'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                    }`}>
-                      {project.status}
-                    </span>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className={`px-3 py-1 text-xs font-medium rounded-full ${
+                        project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                        project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                        'bg-blue-500/20 text-blue-400 border border-blue-500/30'
+                      }`}>
+                        {project.status}
+                      </span>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 px-3 py-1 rounded-full bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 hover:text-white border border-purple-500/30 hover:border-purple-400 transition-all duration-200 text-xs font-medium"
+                        >
+                          <ExternalLink className="w-3 h-3" />
+                          Visit
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-purple-400 hover:text-pink-400 transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </a>
-                )}
               </div>
 
               {/* Description */}
@@ -190,19 +193,7 @@ export default function Projects() {
                   <Rocket className="w-4 h-4 mr-2" />
                   <span>Solo Builder</span>
                 </div>
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-purple-500/20 hover:bg-purple-500/40 text-purple-300 hover:text-white border border-purple-500/30 hover:border-purple-400 transition-all duration-200 text-xs font-medium"
-                  >
-                    <ExternalLink className="w-3 h-3" />
-                    Visit Site
-                  </a>
-                ) : (
-                  <div className="text-xs text-gray-500">Built from scratch</div>
-                )}
+                <div className="text-xs text-gray-500">Built from scratch</div>
               </div>
             </motion.div>
           ))}
