@@ -215,6 +215,7 @@ export default function About() {
               { name: 'DeskExam', status: 'Live', role: 'Solo Builder', tech: 'Next.js, React, TypeScript, Google API' },
               { name: 'CaterConnect India', status: 'Built', role: 'Solo Builder', tech: 'React, Node.js, MongoDB' },
               { name: 'Kapil Electricals', status: 'Live', role: 'Client Project', tech: 'Next.js 16, React 19, TypeScript' },
+              { name: 'ManageCash', status: 'Live', role: 'Solo Builder', tech: 'React, Fastify, MongoDB, Tailwind CSS' },
             ].map((product, index) => (
               <motion.div
                 key={index}

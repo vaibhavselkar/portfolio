@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { ExternalLink, Users, Rocket, Database, Code, Smartphone, Zap } from 'lucide-react'
+import { ExternalLink, Users, Rocket, Database, Code, Smartphone, Zap, IndianRupee } from 'lucide-react'
 
 interface Project {
   title: string
@@ -97,6 +97,25 @@ const projects: Project[] = [
     status: 'Live',
     delay: 0.5,
   },
+  {
+    title: 'ManageCash',
+    description: 'Full-stack multi-tenant SaaS for Indian retail shops — replacing paper cashbooks with a unified dashboard for cash flow, customer wallets, inventory, and staff payroll.',
+    highlights: [
+      'Customer wallet ledgers with credit/debit passbook per account',
+      'Inventory & purchase management with automatic stock updates',
+      'Staff salary payroll built into the same dashboard',
+      'Real-time dashboard with trend charts, donut breakdown & daily P&L',
+      'Atomic deletes — reverses wallet balances, stock & mirror transactions across 6 collections',
+      'Optimistic UI with 10-second undo-on-delete (no blocking modals)',
+      'WhatsApp payment notifications for customers',
+      'Multi-role access (Admin / Staff) with JWT auth',
+    ],
+    icon: <IndianRupee className="w-6 h-6" />,
+    tags: ['React', 'Fastify', 'Node.js', 'MongoDB', 'Tailwind CSS', 'JWT'],
+    status: 'Live',
+    link: 'https://managecash.in',
+    delay: 0.6,
+  },
 ]
 
 export default function Projects() {
@@ -111,7 +130,7 @@ export default function Projects() {
           className="mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Products Built</h2>
-          <p className="text-xl text-gray-300 mb-4">5 products across 5 different industries - from solo projects to co-founding ventures</p>
+          <p className="text-xl text-gray-300 mb-4">6 products across 6 different industries - from solo projects to co-founding ventures</p>
           <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 

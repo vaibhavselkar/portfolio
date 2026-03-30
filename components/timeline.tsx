@@ -75,7 +75,7 @@ const timelineEvents: TimelineEvent[] = [
   },
   {
     type: 'achievement',
-    title: '5 Products Built Across 5 Industries',
+    title: '6 Products Built Across 6 Industries',
     organization: 'Solo Projects & Co-Founding',
     date: '2021 – Present',
     description: 'Built diverse products solving real problems across multiple industries.',
@@ -84,7 +84,8 @@ const timelineEvents: TimelineEvent[] = [
       'PharmaFlow - Pharmaceutical supply chain management',
       'DeskExam - Academic document platform',
       'CaterConnect India - Catering marketplace',
-      'Kapil Electricals - Professional business website'
+      'Kapil Electricals - Professional business website',
+      'ManageCash - Retail cash & inventory SaaS for Indian shops'
     ],
     delay: 0.8,
     icon: <Code className="w-6 h-6" />
