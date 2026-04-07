@@ -11,13 +11,8 @@ export const metadata: Metadata = {
   description: 'Building scalable systems. Shipping impactful products. Product-focused software engineer with expertise in backend architecture, AI integration, and data-driven product strategy.',
   generator: 'v0.app',
   icons: {
-    icon: [
-      {
-        url: '/vb-icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/images/logo.jpg',
+    apple: '/images/logo.jpg',
   },
   viewport: {
     width: 'device-width',
