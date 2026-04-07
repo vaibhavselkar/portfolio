@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import Header from '@/components/header'
 import Hero from '@/components/hero'
 import About from '@/components/about'
@@ -12,12 +11,8 @@ import Contact from '@/components/contact'
 import FloatingOrbs from '@/components/floating-orbs'
 
 export default function Home() {
-  useEffect(() => {
-    document.documentElement.classList.add('dark')
-  }, [])
-
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+    <div className="relative min-h-screen bg-gradient-to-br from-slate-50 via-violet-50/30 to-white">
       <FloatingOrbs />
       <Header />
       <main className="relative z-10">

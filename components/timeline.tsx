@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap, Rocket, Brain, Code, Users } from 'lucide-react'
+import { Briefcase, GraduationCap, Rocket, Brain, Code } from 'lucide-react'
 
 interface TimelineEvent {
   type: 'work' | 'education' | 'achievement'
@@ -30,10 +30,10 @@ const timelineEvents: TimelineEvent[] = [
       '45% faster release cycles through CI/CD automation',
       '70% feature adoption increase, 10+ hours/week teacher efficiency gain',
       'Multi-tenant SaaS architecture serving 10+ classrooms, 20+ students per session',
-      'AI integration across writing feedback, quiz generation, and assessment framework'
+      'AI integration across writing feedback, quiz generation, and assessment framework',
     ],
     delay: 0,
-    icon: <Brain className="w-6 h-6" />
+    icon: <Brain className="w-6 h-6" />,
   },
   {
     type: 'work',
@@ -48,10 +48,10 @@ const timelineEvents: TimelineEvent[] = [
       'Established Sanghamitra\'s Hyderabad presence from scratch - location, office, marketing materials',
       'Designed and executed Water Quality Awareness Program at Primary Health Care Centre',
       'Organized week-long summer school covering math, English, robotics, and computer knowledge',
-      'Built foundation for transitioning into software product development'
+      'Built foundation for transitioning into software product development',
     ],
     delay: 0.2,
-    icon: <Rocket className="w-6 h-6" />
+    icon: <Rocket className="w-6 h-6" />,
   },
   {
     type: 'education',
@@ -61,7 +61,7 @@ const timelineEvents: TimelineEvent[] = [
     description: 'Advanced studies in data science, machine learning, statistical analysis, and programming.',
     highlights: ['GPA: 8.75', 'Building formal foundations on practical experience'],
     delay: 0.4,
-    icon: <GraduationCap className="w-6 h-6" />
+    icon: <GraduationCap className="w-6 h-6" />,
   },
   {
     type: 'education',
@@ -71,7 +71,7 @@ const timelineEvents: TimelineEvent[] = [
     description: 'Rigorous applied data science program focused on real-world projects and machine learning workflows.',
     highlights: ['Built and deployed ML models', 'Worked with large datasets', 'Full data science workflow'],
     delay: 0.6,
-    icon: <Brain className="w-6 h-6" />
+    icon: <Brain className="w-6 h-6" />,
   },
   {
     type: 'achievement',
@@ -85,10 +85,10 @@ const timelineEvents: TimelineEvent[] = [
       'DeskExam - Academic document platform',
       'CaterConnect India - Catering marketplace',
       'Kapil Electricals - Professional business website',
-      'ManageCash - Retail cash & inventory SaaS for Indian shops'
+      'ManageCash - Retail cash & inventory SaaS for Indian shops',
     ],
     delay: 0.8,
-    icon: <Code className="w-6 h-6" />
+    icon: <Code className="w-6 h-6" />,
   },
   {
     type: 'education',
@@ -98,7 +98,7 @@ const timelineEvents: TimelineEvent[] = [
     description: 'Foundation in science, analytical thinking, research methodology, and data analysis.',
     highlights: ['Microbiology, Botany, Chemistry', 'Developed analytical and research skills'],
     delay: 1.0,
-    icon: <GraduationCap className="w-6 h-6" />
+    icon: <GraduationCap className="w-6 h-6" />,
   },
 ]
 
@@ -113,13 +113,13 @@ export default function Timeline() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Professional Journey</h2>
-          <p className="text-xl text-gray-300 mb-4">From hardware product development to AI-driven software platforms</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Professional Journey</h2>
+          <p className="text-xl text-slate-600 mb-4">From hardware product development to AI-driven software platforms</p>
           <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 
         {/* Timeline */}
-        <div className="space-y-8 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-purple-500 before:via-purple-500 before:to-transparent md:before:left-1/2 md:before:translate-x-[-50%]">
+        <div className="space-y-8 relative before:absolute before:left-8 before:top-0 before:bottom-0 before:w-0.5 before:bg-gradient-to-b before:from-purple-400 before:via-pink-400 before:to-transparent md:before:left-1/2 md:before:translate-x-[-50%]">
           {timelineEvents.map((event, index) => (
             <motion.div
               key={index}
@@ -132,8 +132,8 @@ export default function Timeline() {
               {/* Dot */}
               <div className="absolute left-0 top-6 w-16 h-16 md:static md:flex md:justify-center">
                 <div className="flex items-center justify-center w-16 h-16">
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white relative z-10 ${
-                    event.type === 'achievement' ? 'ring-4 ring-purple-300/30' : ''
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white relative z-10 shadow-md shadow-purple-200 ${
+                    event.type === 'achievement' ? 'ring-4 ring-purple-200' : ''
                   }`}>
                     {event.icon || (event.type === 'work' ? (
                       <Briefcase size={20} />
@@ -145,25 +145,25 @@ export default function Timeline() {
               </div>
 
               {/* Content */}
-              <div className="ml-24 md:ml-0 glass p-6 rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all">
+              <div className="ml-24 md:ml-0 glass p-6 rounded-xl border border-purple-100 hover:border-purple-300 transition-all">
                 <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <h3 className="text-xl font-bold text-white">{event.title}</h3>
-                    <p className="text-purple-300 font-medium">{event.organization}</p>
+                    <h3 className="text-xl font-bold text-slate-900">{event.title}</h3>
+                    <p className="text-purple-600 font-medium">{event.organization}</p>
                   </div>
-                  <span className="text-sm text-gray-400 whitespace-nowrap">{event.date}</span>
+                  <span className="text-sm text-slate-500 whitespace-nowrap">{event.date}</span>
                 </div>
 
-                <p className="text-gray-300 mb-4">{event.description}</p>
+                <p className="text-slate-600 mb-4">{event.description}</p>
 
                 {event.highlights && event.highlights.length > 0 && (
                   <ul className="space-y-2">
                     {event.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2 text-gray-400 text-sm">
+                      <li key={i} className="flex items-start gap-2 text-slate-500 text-sm">
                         <span className={`font-bold mt-0.5 flex-shrink-0 ${
-                          event.type === 'work' ? 'text-purple-400' :
-                          event.type === 'education' ? 'text-blue-400' :
-                          'text-green-400'
+                          event.type === 'work' ? 'text-purple-500' :
+                          event.type === 'education' ? 'text-blue-500' :
+                          'text-green-500'
                         }`}>•</span>
                         <span>{highlight}</span>
                       </li>
@@ -183,21 +183,21 @@ export default function Timeline() {
           viewport={{ once: true }}
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center"
         >
-          <div className="glass p-6 rounded-xl border border-purple-500/20">
-            <div className="text-3xl font-bold text-purple-400 mb-2">6</div>
-            <div className="text-sm text-gray-400">Products Built</div>
+          <div className="glass p-6 rounded-xl border border-purple-100">
+            <div className="text-3xl font-bold text-purple-600 mb-2">6</div>
+            <div className="text-sm text-slate-500">Products Built</div>
           </div>
-          <div className="glass p-6 rounded-xl border border-purple-500/20">
-            <div className="text-3xl font-bold text-blue-400 mb-2">6</div>
-            <div className="text-sm text-gray-400">Industries Served</div>
+          <div className="glass p-6 rounded-xl border border-purple-100">
+            <div className="text-3xl font-bold text-blue-500 mb-2">6</div>
+            <div className="text-sm text-slate-500">Industries Served</div>
           </div>
-          <div className="glass p-6 rounded-xl border border-purple-500/20">
-            <div className="text-3xl font-bold text-green-400 mb-2">3+</div>
-            <div className="text-sm text-gray-400">Years Experience</div>
+          <div className="glass p-6 rounded-xl border border-purple-100">
+            <div className="text-3xl font-bold text-green-600 mb-2">3+</div>
+            <div className="text-sm text-slate-500">Years Experience</div>
           </div>
-          <div className="glass p-6 rounded-xl border border-purple-500/20">
-            <div className="text-3xl font-bold text-pink-400 mb-2">1000+</div>
-            <div className="text-sm text-gray-400">Users Served</div>
+          <div className="glass p-6 rounded-xl border border-purple-100">
+            <div className="text-3xl font-bold text-pink-500 mb-2">1000+</div>
+            <div className="text-sm text-slate-500">Users Served</div>
           </div>
         </motion.div>
       </div>

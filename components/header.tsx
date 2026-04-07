@@ -29,7 +29,7 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-slate-950/80 backdrop-blur-md border-b border-purple-500/20' : 'bg-transparent'
+        scrolled ? 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
@@ -39,11 +39,11 @@ export default function Header() {
             alt="Vaibhav Selkar"
             width={48}
             height={48}
-            className="rounded-xl hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+            className="rounded-xl hover:shadow-lg hover:shadow-purple-400/40 transition-all"
           />
           <div>
-            <div className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">Vaibhav Selkar</div>
-            <div className="text-xs text-gray-400">Product Engineer & Co-Founder</div>
+            <div className="text-lg font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Vaibhav Selkar</div>
+            <div className="text-xs text-slate-500">Product Engineer & Co-Founder</div>
           </div>
         </Link>
 
@@ -53,7 +53,7 @@ export default function Header() {
             <Link
               key={item.label}
               href={item.href}
-              className="text-gray-300 hover:text-purple-300 transition-colors text-sm font-medium"
+              className="text-slate-600 hover:text-purple-600 transition-colors text-sm font-medium"
             >
               {item.label}
             </Link>
@@ -63,7 +63,7 @@ export default function Header() {
               href="https://linkedin.com/in/vaibhav-selkar"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+              className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-blue-400/40 transition-all"
             >
               LinkedIn
             </a>
@@ -71,7 +71,7 @@ export default function Header() {
               href="https://github.com/vaibhavselkar"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+              className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white text-sm font-medium hover:shadow-lg hover:shadow-purple-400/40 transition-all"
             >
               GitHub
             </a>
@@ -81,7 +81,7 @@ export default function Header() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white hover:text-purple-300 transition-colors"
+          className="md:hidden text-slate-700 hover:text-purple-600 transition-colors"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -92,25 +92,25 @@ export default function Header() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute top-full left-0 right-0 bg-slate-950/95 backdrop-blur-md border-b border-purple-500/20 md:hidden"
+            className="absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-md md:hidden"
           >
             <div className="flex flex-col gap-4 p-4">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-gray-300 hover:text-purple-300 transition-colors font-medium"
+                  className="text-slate-700 hover:text-purple-600 transition-colors font-medium"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <div className="flex flex-col gap-2 pt-2 border-t border-purple-500/20">
+              <div className="flex flex-col gap-2 pt-2 border-t border-slate-200">
                 <a
                   href="https://linkedin.com/in/vaibhav-selkar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+                  className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-blue-400/40 transition-all"
                 >
                   LinkedIn
                 </a>
@@ -118,7 +118,7 @@ export default function Header() {
                   href="https://github.com/vaibhavselkar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-purple-500/50 transition-all"
+                  className="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-medium text-center hover:shadow-lg hover:shadow-purple-400/40 transition-all"
                 >
                   GitHub
                 </a>

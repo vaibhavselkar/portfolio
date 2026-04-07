@@ -24,7 +24,6 @@ export default function FloatingOrbs() {
       opacity: number
     }> = []
 
-    // Create particles
     for (let i = 0; i < 5; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -32,12 +31,12 @@ export default function FloatingOrbs() {
         vx: (Math.random() - 0.5) * 0.5,
         vy: (Math.random() - 0.5) * 0.5,
         radius: Math.random() * 150 + 100,
-        opacity: Math.random() * 0.3 + 0.1,
+        opacity: Math.random() * 0.12 + 0.04,
       })
     }
 
     const animate = () => {
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.1)'
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.15)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       particles.forEach((particle) => {
@@ -53,7 +52,7 @@ export default function FloatingOrbs() {
 
         const gradient = ctx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, particle.radius)
         gradient.addColorStop(0, `rgba(168, 85, 247, ${particle.opacity})`)
-        gradient.addColorStop(0.5, `rgba(168, 85, 247, ${particle.opacity * 0.5})`)
+        gradient.addColorStop(0.5, `rgba(219, 39, 119, ${particle.opacity * 0.5})`)
         gradient.addColorStop(1, `rgba(168, 85, 247, 0)`)
 
         ctx.fillStyle = gradient
@@ -77,7 +76,7 @@ export default function FloatingOrbs() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none opacity-40"
+      className="fixed inset-0 pointer-events-none opacity-60"
     />
   )
 }

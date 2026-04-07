@@ -36,18 +36,18 @@ export default function Hero() {
         {/* Animated Name */}
         <motion.div variants={itemVariants}>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-            <span className="text-white">Vaibhav</span>
+            <span className="text-slate-900">Vaibhav</span>
             <br />
             <span className="gradient-text">Selkar</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-300 mb-4">Product Engineer & Co-Founder</p>
-          <p className="text-sm text-gray-400 mb-8">Building systems that run businesses | AI Integration Expert | Full-Stack Developer</p>
+          <p className="text-xl sm:text-2xl text-slate-700 mb-4">Product Engineer & Co-Founder</p>
+          <p className="text-sm text-slate-500 mb-8">Building systems that run businesses | AI Integration Expert | Full-Stack Developer</p>
         </motion.div>
 
         {/* Subheading */}
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed"
         >
           I build products that solve real problems. From EdTech platforms serving classrooms across India to AI-powered exam generators and supply chain solutions, I've built 6 products across 6 different industries. My approach: identify the problem, design the solution, and ship it fast.
         </motion.p>
@@ -59,21 +59,21 @@ export default function Hero() {
         >
           <Link
             href="#about"
-            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all flex items-center gap-2 group"
+            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-white font-semibold hover:shadow-lg hover:shadow-purple-400/40 transition-all flex items-center gap-2 group"
           >
             View My Story
             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
           </Link>
           <a
             href="mailto:vaibhavselkar.tech@gmail.com"
-            className="px-8 py-3 border border-purple-400 text-purple-300 rounded-lg font-semibold hover:bg-purple-500/10 transition-all flex items-center gap-2"
+            className="px-8 py-3 border border-purple-400 text-purple-600 rounded-lg font-semibold hover:bg-purple-50 transition-all flex items-center gap-2"
           >
             <Download size={20} />
             Contact Me
           </a>
           <Link
             href="#products"
-            className="px-8 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg font-semibold hover:bg-slate-800 transition-all"
+            className="px-8 py-3 bg-white border border-slate-200 text-slate-700 rounded-lg font-semibold hover:bg-slate-50 hover:border-slate-300 transition-all shadow-sm"
           >
             See Products
           </Link>
@@ -86,26 +86,26 @@ export default function Hero() {
         >
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold gradient-text">6</div>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">Products Built</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">Products Built</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold gradient-text">66%</div>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">API Latency ↓</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">API Latency ↓</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold gradient-text">28%</div>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">Signups ↑</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">Signups ↑</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-bold gradient-text">99.9%</div>
-            <p className="text-xs sm:text-sm text-gray-400 mt-2">Uptime</p>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">Uptime</p>
           </div>
         </motion.div>
 
         {/* Tech Icons */}
         <motion.div
           variants={itemVariants}
-          className="flex justify-center gap-8 mt-12 text-gray-400"
+          className="flex justify-center gap-8 mt-12 text-slate-500"
         >
           <div className="flex items-center gap-2">
             <Code size={20} />

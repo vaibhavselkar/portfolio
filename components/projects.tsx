@@ -1,5 +1,6 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion } from 'framer-motion'
 import { ExternalLink, Users, Rocket, Database, Code, Smartphone, Zap, IndianRupee } from 'lucide-react'
 
@@ -7,7 +8,7 @@ interface Project {
   title: string
   description: string
   highlights: string[]
-  icon: React.ReactNode
+  icon: ReactNode
   tags: string[]
   status: 'Live' | 'In Development' | 'Built'
   link?: string
@@ -26,7 +27,7 @@ const projects: Project[] = [
       '45% faster release cycles with CI/CD automation',
       '70% feature adoption increase',
       '10+ classrooms, 20+ students per session',
-      '10+ hours/week teacher workflow efficiency'
+      '10+ hours/week teacher workflow efficiency',
     ],
     icon: <Users className="w-6 h-6" />,
     tags: ['React', 'Node.js', 'Python', 'Flask', 'MongoDB', 'PostgreSQL', 'AWS EC2', 'AI/LLM'],
@@ -42,7 +43,7 @@ const projects: Project[] = [
       'Real-time order tracking and fulfillment',
       'Salt-based medicine substitute search',
       'Inventory management for distributors',
-      'Revenue and analytics monitoring'
+      'Revenue and analytics monitoring',
     ],
     icon: <Database className="w-6 h-6" />,
     tags: ['Next.js', 'TypeScript', 'React', 'Supabase', 'ShadCN UI', 'Tailwind CSS'],
@@ -58,7 +59,7 @@ const projects: Project[] = [
       'LLM-driven feedback and content generation (Gemini API)',
       'LaTeX equation editor with real-time preview',
       'Intelligent document handling and transformation',
-      'End-to-end academic workflow from upload to evaluation'
+      'End-to-end academic workflow from upload to evaluation',
     ],
     icon: <Code className="w-6 h-6" />,
     tags: ['Node.js', 'React', 'TypeScript', 'Python', 'FastAPI', 'ChromaDB', 'Gemini API'],
@@ -74,11 +75,12 @@ const projects: Project[] = [
       'Multi-caterer quote comparison',
       'Digital enquiry system for caterers',
       'Professional online presence for local businesses',
-      'Scalable architecture for other cities'
+      'Scalable architecture for other cities',
     ],
     icon: <Smartphone className="w-6 h-6" />,
     tags: ['React', 'Node.js', 'MongoDB'],
     status: 'Built',
+    link: 'https://vaibhavselkar-mymenu.vercel.app/',
     delay: 0.4,
   },
   {
@@ -90,7 +92,7 @@ const projects: Project[] = [
       'Customer review system for solar solutions',
       'Multi-channel contact system',
       'Certifications and compliance display',
-      'SEO optimized with semantic HTML'
+      'SEO optimized with semantic HTML',
     ],
     icon: <Zap className="w-6 h-6" />,
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Radix UI', 'React Hook Form', 'Zod'],
@@ -118,6 +120,96 @@ const projects: Project[] = [
   },
 ]
 
+function ProjectCard({ project }: { project: Project }) {
+  const cardClass =
+    'group glass p-8 rounded-2xl border border-purple-200 hover:border-purple-400 hover:shadow-lg hover:shadow-purple-100 transition-all duration-300 flex flex-col h-full'
+
+  const inner = (
+    <>
+      {/* Header */}
+      <div className="flex items-start justify-between mb-4">
+        <div className="flex items-center gap-4">
+          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center text-purple-600 group-hover:text-pink-600 transition-colors">
+            {project.icon}
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-slate-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text transition-all">
+              {project.title}
+            </h3>
+            <div className="flex items-center gap-2 mt-1">
+              <span
+                className={`flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full ${
+                  project.status === 'Live'
+                    ? 'bg-green-100 text-green-700 border border-green-200'
+                    : project.status === 'In Development'
+                    ? 'bg-amber-100 text-amber-700 border border-amber-200'
+                    : 'bg-blue-100 text-blue-700 border border-blue-200'
+                }`}
+              >
+                {project.status}
+                {project.link && <ExternalLink className="w-3 h-3" />}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Description */}
+      <p className="text-slate-600 mb-6 leading-relaxed">{project.description}</p>
+
+      {/* Highlights */}
+      <div className="mb-6">
+        <h4 className="text-sm font-semibold text-slate-700 mb-3">Key Achievements</h4>
+        <ul className="space-y-2">
+          {project.highlights.map((highlight, i) => (
+            <li key={i} className="flex items-start gap-2 text-slate-600 text-sm">
+              <span className="text-purple-500 font-bold mt-0.5">→</span>
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Tags */}
+      <div className="flex flex-wrap gap-2 mb-6">
+        {project.tags.map((tag, i) => (
+          <span
+            key={i}
+            className="px-3 py-1 text-xs font-medium rounded-full bg-purple-50 text-purple-700 border border-purple-200 group-hover:bg-purple-100 transition-colors"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="mt-auto flex items-center justify-between">
+        <div className="flex items-center text-purple-600 group-hover:text-pink-600 transition-colors font-medium text-sm">
+          <Rocket className="w-4 h-4 mr-2" />
+          <span>Solo Builder</span>
+        </div>
+        {project.link ? (
+          <div className="flex items-center gap-1 text-xs text-purple-500 group-hover:text-pink-500 transition-colors font-medium">
+            Visit Site <ExternalLink className="w-3 h-3" />
+          </div>
+        ) : (
+          <div className="text-xs text-slate-400">Built from scratch</div>
+        )}
+      </div>
+    </>
+  )
+
+  if (project.link) {
+    return (
+      <a href={project.link} target="_blank" rel="noopener noreferrer" className={cardClass}>
+        {inner}
+      </a>
+    )
+  }
+
+  return <div className={cardClass}>{inner}</div>
+}
+
 export default function Projects() {
   return (
     <section id="products" className="py-24 px-4 sm:px-6 lg:px-8">
@@ -129,8 +221,10 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Products Built</h2>
-          <p className="text-xl text-gray-300 mb-4">6 products across 6 different industries - from solo projects to co-founding ventures</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Products Built</h2>
+          <p className="text-xl text-slate-600 mb-4">
+            6 products across 6 different industries - from solo projects to co-founding ventures
+          </p>
           <div className="w-32 h-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
         </motion.div>
 
@@ -142,83 +236,8 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: project.delay }}
               viewport={{ once: true }}
-              className="group glass p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/50 transition-all duration-300 flex flex-col h-full"
             >
-              {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500/30 to-pink-500/30 flex items-center justify-center text-purple-300 group-hover:text-pink-300 transition-colors">
-                    {project.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-400 group-hover:to-pink-400 group-hover:bg-clip-text transition-all">
-                      {project.title}
-                    </h3>
-                    <div className="flex items-center gap-2 mt-1">
-                      {project.link ? (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`flex items-center gap-1 px-3 py-1 text-xs font-medium rounded-full cursor-pointer hover:opacity-80 transition-opacity ${
-                            project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                            project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                            'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                          }`}
-                        >
-                          {project.status}
-                          <ExternalLink className="w-3 h-3" />
-                        </a>
-                      ) : (
-                        <span className={`px-3 py-1 text-xs font-medium rounded-full ${
-                          project.status === 'Live' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                          project.status === 'In Development' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                          'bg-blue-500/20 text-blue-400 border border-blue-500/30'
-                        }`}>
-                          {project.status}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
-
-              {/* Highlights */}
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Achievements</h4>
-                <ul className="space-y-2">
-                  {project.highlights.map((highlight, i) => (
-                    <li key={i} className="flex items-start gap-2 text-gray-300 text-sm">
-                      <span className="text-purple-400 font-bold mt-0.5">→</span>
-                      <span>{highlight}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tags.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 text-xs font-medium rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30 group-hover:bg-purple-500/20 transition-colors"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              {/* Footer */}
-              <div className="mt-auto flex items-center justify-between">
-                <div className="flex items-center text-purple-400 group-hover:text-pink-400 transition-colors font-medium text-sm">
-                  <Rocket className="w-4 h-4 mr-2" />
-                  <span>Solo Builder</span>
-                </div>
-                <div className="text-xs text-gray-500">Built from scratch</div>
-              </div>
+              <ProjectCard project={project} />
             </motion.div>
           ))}
         </div>
@@ -231,20 +250,22 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-xl text-gray-300 mb-8">Industries Served</h3>
+          <h3 className="text-xl text-slate-700 mb-8">Industries Served</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {['EdTech', 'Pharmaceutical', 'Academic', 'Catering', 'Electrical Contracting', 'AI/ML'].map((industry, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
-                viewport={{ once: true }}
-                className="px-4 py-2 bg-slate-800/50 rounded-full text-gray-300 text-sm border border-purple-500/20"
-              >
-                {industry}
-              </motion.span>
-            ))}
+            {['EdTech', 'Pharmaceutical', 'Academic', 'Catering', 'Electrical Contracting', 'AI/ML'].map(
+              (industry, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="px-4 py-2 bg-white rounded-full text-slate-600 text-sm border border-slate-200 shadow-sm"
+                >
+                  {industry}
+                </motion.span>
+              )
+            )}
           </div>
         </motion.div>
       </div>

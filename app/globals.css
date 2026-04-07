@@ -4,31 +4,29 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Light mode - rarely used */
-  --background: oklch(1 0 0);
+  --background: oklch(0.985 0.003 280);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(0.95 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.55 0.28 280);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.55 0.28 280);
+  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.01 280);
+  --input: oklch(0.92 0.01 280);
+  --ring: oklch(0.6 0.25 280);
   --radius: 0.625rem;
 }
 
 .dark {
-  /* Dark gradient theme with neon accents */
   --background: oklch(0.08 0 0);
   --foreground: oklch(0.95 0 0);
   --card: oklch(0.12 0.02 280);
@@ -97,7 +95,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground dark:bg-gradient-to-br dark:from-slate-950 dark:via-purple-950 dark:to-slate-900;
+    @apply bg-background text-foreground;
     @apply scroll-smooth;
   }
   html {
@@ -107,20 +105,20 @@
 
 @layer utilities {
   .glow-accent {
-    @apply shadow-lg shadow-purple-500/50;
+    @apply shadow-lg shadow-purple-400/30;
   }
-  
+
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/90 backdrop-blur-md border border-slate-200 shadow-sm;
   }
-  
+
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent;
   }
-  
+
   .gradient-border {
     position: relative;
-    background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1)) padding-box,
-                linear-gradient(135deg, rgba(168, 85, 247, 0.5), rgba(236, 72, 153, 0.5)) border-box;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.06), rgba(236, 72, 153, 0.06)) padding-box,
+                linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(236, 72, 153, 0.4)) border-box;
   }
 }

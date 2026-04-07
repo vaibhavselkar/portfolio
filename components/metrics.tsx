@@ -30,13 +30,13 @@ function AnimatedMetric({ value, label, suffix = '', delay }: MetricProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
-      className="glass p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all group cursor-default"
+      className="glass p-8 rounded-2xl border border-purple-100 hover:border-purple-300 hover:shadow-md hover:shadow-purple-100 transition-all group cursor-default"
     >
       <div className="text-5xl sm:text-6xl font-bold gradient-text mb-2 group-hover:scale-110 transition-transform">
         {displayValue}
         {suffix}
       </div>
-      <p className="text-gray-400 text-lg">{label}</p>
+      <p className="text-slate-500 text-lg">{label}</p>
     </motion.div>
   )
 }
@@ -52,7 +52,7 @@ export default function Metrics() {
   ]
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-900/30 border-y border-purple-500/10">
+    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-slate-50/80 border-y border-slate-200">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,8 +61,8 @@ export default function Metrics() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">Impact Metrics</h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Impact Metrics</h2>
+          <p className="text-slate-500 text-lg max-w-2xl mx-auto">
             Data-driven improvements that moved the needle on what matters most
           </p>
         </motion.div>
